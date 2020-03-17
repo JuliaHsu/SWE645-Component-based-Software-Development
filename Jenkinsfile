@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "swe645docker/swe645-group"
+        registry = "swe645docker/swe645-group-project"
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
@@ -9,11 +9,11 @@ pipeline {
     stages {
         stage('Cloning Git') {
             steps{
-                git 'https://github.com/JuliaHsu/SWE645-group.git'
+                git 'https://github.com/JuliaHsu/SWE645-group-project.git'
                 withAnt(installation: 'Ant1.10.7') {
                         sh'''
                         #!/bin/bash
-                        cd ~/workspace/swe645-group/swe645-group
+                        cd ~/workspace/swe645-group-project/swe645-group
                         ls
                         ant war
                         '''
@@ -64,9 +64,9 @@ pipeline {
                sh'''
                #!/bin/bash
                 docker login
-                docker pull swe645docker/swe645-group:$BUILD_NUMBER
+                docker pull swe645docker/swe645-group-project:$BUILD_NUMBER
                 sudo -s source /etc/environment
-                kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment swe645 swe645-group=docker.io/swe645docker/swe645-group:$BUILD_NUMBER
+                kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment swe645 swe645-group-project=docker.io/swe645docker/swe645-group-project:$BUILD_NUMBER
             '''
             }
         }

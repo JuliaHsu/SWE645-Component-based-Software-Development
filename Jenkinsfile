@@ -66,7 +66,7 @@ pipeline {
                 docker login
                 docker pull swe645docker/swe645-group-project:$BUILD_NUMBER
                 sudo -s source /etc/environment
-                kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment swe645 swe645-group-project=docker.io/swe645docker/swe645-group-project:$BUILD_NUMBER
+                kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment swe645 swe645-group=docker.io/swe645docker/swe645-group-project:$BUILD_NUMBER
             '''
             }
         }

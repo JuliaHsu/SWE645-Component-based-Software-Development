@@ -126,7 +126,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="/Users/julia/Documents/GeorgeMason/master/Spring_2020/SWE645/hw/group_assignment/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Users/julia/Documents/GeorgeMason/master/Spring_2020/SWE645/hw/group_assignment/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/swe645_group" path="/swe645_group" reloadable="true" source="org.eclipse.jst.jee.server:swe645_group"/></Host>
+      <Context docBase="/Users/julia/Documents/GeorgeMason/master/Spring_2020/SWE645/hw/SWE645-group-project/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Users/julia/Documents/GeorgeMason/master/Spring_2020/SWE645/hw/SWE645-group-project/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/swe645-group" path="/swe645-group" reloadable="true" source="org.eclipse.jst.jee.server:swe645-group"/></Host>
     </Engine>
   </Service>
 </Server>

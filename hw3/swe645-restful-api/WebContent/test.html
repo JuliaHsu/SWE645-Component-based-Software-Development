@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="BIG5">
+		<title>Student Survey Form</title>
+		<link rel="stylesheet" href="./test.css">
+	</head>
+	
+	<body>
+		<h1>Student Survey Form</h1>
+		<div class="form">
+		<form method="post" action="http://localhost:8080/swe645-restful-api/restful/survey/create">
+			<h2>Personal Info</h2>
+			<label class="left" for="fName">First Name</label>
+			<label class="right" for="lName">Last Name</label>
+			<br>
+			<input class="left" type="text" id="fName" name="fName" placeholder="first name...">
+			<input class="right" type="text" id="lName" name="lName" placeholder="last name...">
+			<br><br>
+			<label class="left" for="address">Street Address</label>
+			<br>
+			<input class="whole" type="text" id="address" name="address" placeholder="address...">
+			
+			<br><br><br>
+			<input type="submit" value="Submit the form" >
+			<input type="submit" value="Cancel">
+
+		</form>
+		</div>
+	</body>
+</html>>

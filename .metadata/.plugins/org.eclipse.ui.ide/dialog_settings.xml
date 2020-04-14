@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/Users/julia/Documents/GeorgeMason/master/Spring_2020/SWE645/hw/SWE645-group-project/hw2/swe645-group"/>
+		<item value="/Users/julia/Documents/GeorgeMason/master/Spring_2020/SWE645/hw/SWE645-group-project/hw2"/>
+	</list>
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/julia/Documents/GeorgeMason/master/Spring_2020/SWE645/hw/SWE645-group-project"/>
 			<item value="/Users/julia/Documents/GeorgeMason/master/Spring_2020/SWE645/hw/group_assignment/swe645_group"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

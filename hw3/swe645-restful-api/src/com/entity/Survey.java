@@ -1,19 +1,6 @@
 package com.entity;
 
-import javax.annotation.Resource;
 import javax.persistence.*;
-import javax.transaction.HeuristicMixedException;
-import javax.transaction.HeuristicRollbackException;
-import javax.transaction.NotSupportedException;
-import javax.transaction.RollbackException;
-import javax.transaction.SystemException;
-import javax.transaction.UserTransaction;
-
-import java.lang.String;
-import java.util.Date;
-import java.util.List;
-
-import javax.ws.rs.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
@@ -26,50 +13,115 @@ import javax.xml.bind.annotation.XmlRootElement;
 })
 public class Survey implements java.io.Serializable{
 	
-	
-
-	//Natural key
 	@Id
-	@Column(name="F_NAME",length=255 ,nullable=false)
+	@Basic(optional = false)
+	@Column(name="F_NAME",length=255,nullable=false)
 	private String fName;
+	public void setFirstName(String s) {
+		this.fName = s;
+	}
+	public String getFirstName() {
+		return fName;
+	}
+	
 	@Column(name="L_NAME",length=255 ,nullable=false)
 	private String lName;
+	public void setLastName(String s) {
+		this.lName = s;
+	}
+	public String getLastName() {
+		return lName;
+	}
+	
 	@Column(name="ADDRESS",length=255 ,nullable=false)
 	private String address;
-//	@Column(name="CITY",length=255 ,nullable=false)
-//	private String city;
-//	@Column(name="STATE",length=255 ,nullable=false)
-//	private String state;
-//	@Column(name="ZIP",length=255 ,nullable=false)
-//	private String zip;
-//	@Column(name="PHONE",length=255 ,nullable=false)
-//	private String phone;
-//	@Column(name="EMAIL",length=255 ,nullable=false)
-//	private String email;
-//	@Column(name="DATE",length=255 ,nullable=false)
-//	private String date;
-
-	
-	
-	public void setInfo(String fName, String lName, String address
-			//,String city, String state, String zip, String phone
-			//,String email, String date, int campus, int reason, int likelihood
-			) {
-				this.fName = fName;
-				this.lName = lName;
-				this.address = address;
-				//this.city = city;
-				//this.state = state;
-				//this.zip = zip;
-				//this.phone = phone;
-				//this.email = email;
-				//this.date = date;
-				//this.campus = campus;
-				//this.reason = reason;
-				//this.likelihood = likelihood;
-	
-				}
-	public String getInfo() {
-		return this.fName+" "+this.lName+" "+this.address;
+	public void setAddress(String s) {
+		this.address = s;
 	}
+	public String getAddress() {
+		return address;
+	}
+
+	@Column(name="CITY",length=255 ,nullable=false)
+	private String city;
+	public void setCity(String s) {
+		this.city = s;
+	}
+	public String getCity() {
+		return city;
+	}
+
+	@Column(name="STATE",length=255 ,nullable=false)
+	private String state;
+	public void setState(String s) {
+		this.state = s;
+	}
+	public String getState() {
+		return state;
+	}
+	
+	@Column(name="ZIP",length=255 ,nullable=false)
+	private String zip;
+	public void setZip(String s) {
+		this.zip = s;
+	}
+	public String getZip() {
+		return zip;
+	}
+	
+	
+	@Column(name="PHONE",length=255 ,nullable=false)
+	private String phone;
+	public void setPhone(String s) {
+		this.phone = s;
+	}
+	public String getPhone() {
+		return phone;
+	}
+
+	@Column(name="EMAIL",length=255 ,nullable=false)
+	private String email;
+	public void setEmail(String s) {
+		this.email = s;
+	}
+	public String getEmail() {
+		return this.email;
+	}
+	
+	@Column(name="DATE",length=255 ,nullable=false)
+	private String date;
+	public void setDate(String s) {
+		this.date = s;
+	}
+	public String getDate(String s) {
+		return this.date;
+	}
+	//=======================================================
+	@Column(name="CAMPUS",length=255 ,nullable=false)
+	private String campus;
+	public void setCampus(String s) {
+		this.campus = s;
+	}
+	public String getCampus(String s) {
+		return this.campus;
+	}
+	
+	@Column(name="REASON",length=255 ,nullable=false)
+	private String reason;
+	public void setReason(String s) {
+		this.reason = s;
+	}
+	public String getReason(String s) {
+		return this.reason;
+	}
+	
+	@Column(name="LIKELIHOOD",length=255 ,nullable=false)
+	private String likelihood;
+	public void setLikelihood(String s) {
+		this.likelihood = s;
+	}
+	public String getLikelihood(String s) {
+		return this.likelihood;
+	}
+	
 }

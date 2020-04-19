@@ -1,0 +1,95 @@
+pipeline {
+    environment {
+        registryCredential = 'dockerhub'
+        registryRestful = "swe645docker/restful"
+        dockerImageRestful = ''
+        registryApp = "swe645docker/swe645-app"
+        dockerImageApp = ''
+        
+    }
+    agent any
+    
+    stages {
+        stage('Cloning Git') {
+            steps{
+                git 'https://github.com/JuliaHsu/SWE645-group-project.git'
+                withAnt(installation: 'Ant1.10.7') {
+                        sh'''
+                        #!/bin/bash
+                        cd ~/workspace/swe645-group-project/hw3
+                        ls
+                        ant war
+                        '''
+                }
+            }
+        }
+
+        stage('backend') {
+            steps {
+                echo 'building backend..'
+                script {
+
+                  dockerImageRestful = docker.build(registryRestful + ":$BUILD_NUMBER")
+                }
+
+            }
+        }
+
+        stage('frontend') {
+            steps {
+                echo 'building frontend..'
+                script {
+
+                  dockerImageApp = docker.build(registryApp + ":$BUILD_NUMBER","./swe645-app")
+                }
+
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+
+        stage('Deploy Image') {
+            steps{
+                script{
+                    docker.withRegistry('',registryCredential){
+                        sh 'docker push $registryRestful:$BUILD_NUMBER'
+                        sh 'docker push $registryApp:$BUILD_NUMBER'
+                    }
+                }
+            }
+        }
+
+        stage('Remove Unused docker image') {
+          steps{
+            sh "docker rmi $registryRestful:$BUILD_NUMBER"
+            sh "docker rmi $registryApp:$BUILD_NUMBER"
+          }
+        }
+		
+		stage('redeploy') {
+            steps{
+               
+               sh'''
+               #!/bin/bash
+                docker login
+                docker pull swe645docker/swe645-group-project:$BUILD_NUMBER
+                sudo -s source /etc/environment
+                kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment swe645 swe645-group=docker.io/swe645docker/swe645-group-project:$BUILD_NUMBER
+            '''
+            }
+        }
+		
+    }
+
+     
+}
+

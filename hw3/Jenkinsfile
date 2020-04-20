@@ -28,7 +28,7 @@ pipeline {
             steps {
                 echo 'building backend..'
                 script {
-
+                sh 'cd ..'
                   dockerImageRestful = docker.build(registryRestful + ":$BUILD_NUMBER")
                 }
 
@@ -39,7 +39,6 @@ pipeline {
             steps {
                 echo 'building frontend..'
                 script {
-
                   dockerImageApp = docker.build(registryApp + ":$BUILD_NUMBER","./swe645-app")
                 }
 

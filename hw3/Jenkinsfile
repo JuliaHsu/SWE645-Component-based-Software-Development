@@ -53,6 +53,17 @@ pipeline {
             }
         }
 
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+
         stage('Deploy Image') {
             steps{
                 script{
@@ -72,7 +83,10 @@ pipeline {
                 sudo -s source /etc/environment
                 kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment frontend nginx=swe645docker/swe645-app:$BUILD_NUMBER
 				kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment restful  restful=swe645docker/restful:$BUILD_NUMBER
-            '''
+				docker image rm swe645docker/swe645-app:$BUILD_NUMBER
+				docker image rm swe645docker/restful:$BUILD_NUMBER
+				
+			'''
             }
         }
 		

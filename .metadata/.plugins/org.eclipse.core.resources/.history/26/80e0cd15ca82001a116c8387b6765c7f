@@ -111,7 +111,7 @@
        	<copy force="true" includeemptydirs="false" todir="WebContent/WEB-INF/classes">
               	            <fileset dir="build/classes">
               	            <include name="**/*.class"/>
-              	            <include name = "META-INF/" />
+              	            <include name = "META-INF/">
               	            </fileset>
               	    </copy>
               	     

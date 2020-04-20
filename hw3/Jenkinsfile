@@ -82,7 +82,7 @@ pipeline {
                #!/bin/bash
                 sudo -s source /etc/environment
                 kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment frontend nginx=swe645docker/swe645-app:$BUILD_NUMBER
-				kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment restful  restrul=swe645docker/restful:$BUILD_NUMBER
+				kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment restful  restful=swe645docker/restful:$BUILD_NUMBER
             '''
             }
         }

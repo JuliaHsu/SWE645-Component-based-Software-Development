@@ -16,7 +16,7 @@ pipeline {
                 withAnt(installation: 'Ant1.10.7') {
                         sh'''
                         #!/bin/bash
-                        cd ~/workspace/swe645-app/hw3
+                        cd ~/workspace/swe645-app/hw3/swe645-restful-api
                         ls
                         ant war
                         '''

@@ -75,7 +75,6 @@
         <copy includeemptydirs="false" todir="build/classes">
             <fileset dir="src">
                 <exclude name="**/*.java"/>
-            	<exclud name = "META_INF" />
             </fileset>
         </copy>
     </target>

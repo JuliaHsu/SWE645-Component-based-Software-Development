@@ -75,7 +75,6 @@
         <copy includeemptydirs="false" todir="build/classes">
             <fileset dir="src">
                 <exclude name="**/*.java"/>
-            	<exclud name = "META_INF" />
             </fileset>
         </copy>
     </target>
@@ -116,7 +115,9 @@
               	            </fileset>
               	    </copy>
               	     
-              	    <war destfile="../swe645-restful-api.war" basedir="WebContent" needxmlfile="false">
+              	    <war destfile="../swe645-restful-api.war"
+              	        basedir="WebContent"
+              	        needxmlfile="false">
               	    </war>
               	</target>
    	

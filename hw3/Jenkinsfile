@@ -43,7 +43,7 @@ pipeline {
                 script {
                   sh'''
                         #!/bin/bash
-                        cp -r ~/workspace/node_module  ~/workspace/swe645-app/hw3/swe645-app
+                        cp -r ~/workspace/node_modules  ~/workspace/swe645-app/hw3/swe645-app
                         cd ~/workspace/swe645-app/hw3/swe645-app
                         ls
                     '''

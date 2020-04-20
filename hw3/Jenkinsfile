@@ -27,6 +27,7 @@ pipeline {
                         cd ~/workspace/swe645-app/hw3/swe645-restful-api
                         ls
                         ant war
+                        cd ~/workspace/swe645-app/hw3/
                         '''
                 }
                   dockerImageRestful = docker.build(registryRestful + ":$BUILD_NUMBER")

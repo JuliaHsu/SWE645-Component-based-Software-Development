@@ -13,14 +13,7 @@ pipeline {
         stage('Cloning Git') {
             steps{
                 git 'https://github.com/JuliaHsu/SWE645-group-project.git'
-                withAnt(installation: 'Ant1.10.7') {
-                        sh'''
-                        #!/bin/bash
-                        cd ~/workspace/swe645-app/hw3/swe645-restful-api
-                        ls
-                        ant war
-                        '''
-                }
+                
             }
         }
 
@@ -28,7 +21,14 @@ pipeline {
             steps {
                 echo 'building backend..'
                 script {
-                sh 'cd ..'
+                    withAnt(installation: 'Ant1.10.7') {
+                        sh'''
+                        #!/bin/bash
+                        cd ~/workspace/swe645-app/hw3/swe645-restful-api
+                        ls
+                        ant war
+                        '''
+                }
                   dockerImageRestful = docker.build(registryRestful + ":$BUILD_NUMBER")
                 }
 
@@ -39,7 +39,13 @@ pipeline {
             steps {
                 echo 'building frontend..'
                 script {
-                  dockerImageApp = docker.build(registryApp + ":$BUILD_NUMBER","./swe645-app")
+                  sh'''
+                        #!/bin/bash
+                        cp -r ~/workspace/node_module  ~/workspace/swe645-app/hw3/swe645-app
+                        cd ~/workspace/swe645-app/hw3/swe645-app
+                        ls
+                    '''
+                  dockerImageApp = docker.build(registryApp + ":$BUILD_NUMBER")
                 }
 
             }

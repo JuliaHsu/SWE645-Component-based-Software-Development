@@ -115,7 +115,7 @@
               	            </fileset>
               	    </copy>
               	     
-              	    <war destfile="../swe645-app.war"
+              	    <war destfile="../swe645-restful-api.war"
               	        basedir="WebContent"
               	        needxmlfile="false">
               	    </war>

@@ -31,7 +31,7 @@ pipeline {
                         ls
                         '''
                 }
-                  dockerImageRestful = docker.build registryRestful + ":$BUILD_NUMBER"
+                  dockerImageRestful = docker.build(registryRestful + ":$BUILD_NUMBER","./hw3")
                 }
 
             }
@@ -47,7 +47,7 @@ pipeline {
                         cd ~/workspace/swe645-app/hw3/swe645-app
                         ls
                     '''
-                  dockerImageApp = docker.build registryApp + ":$BUILD_NUMBER"
+                  dockerImageApp = docker.build(registryApp + ":$BUILD_NUMBER","./hw3/swe645-app")
                 }
 
             }

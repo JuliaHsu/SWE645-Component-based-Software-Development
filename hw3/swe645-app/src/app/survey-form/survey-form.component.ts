@@ -71,7 +71,7 @@ export class SurveyFormComponent implements OnInit {
       
   }
   cancel():void{
-    alert("sure you want to cancel??")
+    alert("sure you want to cancel?")
     this.router.navigate(['/home'])
   }
 }

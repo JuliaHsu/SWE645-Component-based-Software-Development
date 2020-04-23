@@ -29,10 +29,11 @@ body {
 }
 
 div.form {
-	/*each side 280 pixel*/
+	/*each side 280 pixel
+	rgb(220, 255, 245)*/
 	width:600px;
 	padding:20px;
-	background-color:rgb(220, 255, 245);
+	background-color:rgb(20, 25, 245);
 	margin-left: auto;
  	margin-right: auto;
  	border-radius: 10px;

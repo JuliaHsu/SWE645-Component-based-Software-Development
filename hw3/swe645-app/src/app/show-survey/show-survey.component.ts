@@ -11,7 +11,7 @@ import { catchError, map, tap, finalize, retry } from 'rxjs/operators';
 })
 export class ShowSurveyComponent implements OnInit {
 
-  url: string = 'ec2-54-145-136-35.compute-1.amazonaws.com:31557/swe645-restful-api/restful/survey'
+  url: string = 'http://ec2-54-145-136-35.compute-1.amazonaws.com:31557/swe645-restful-api/restful/survey'
   surveys: Survey[]
   constructor(private http:HttpClient) { }
 

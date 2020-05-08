@@ -54,7 +54,7 @@ export class SurveyFormComponent implements OnInit {
             +"likelihood="+this.message.likelihood;
     
     if(this.checkInfo()){
-      alert('please fill in all the field in the personal info section\n\n');
+      alert('please fill in all the field in the personal info section\n\n\n');
     }
     else{
       this.http.post(this.url,body).subscribe(

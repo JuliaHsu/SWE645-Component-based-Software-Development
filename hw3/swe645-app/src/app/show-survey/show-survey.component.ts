@@ -22,7 +22,7 @@ export class ShowSurveyComponent implements OnInit {
         console.log(res);
         this.surveys = res['body'];
       },
-      error=>alert('not able to request the content')
+      error=>alert('not able to request the content\n')
       );
   }
 
